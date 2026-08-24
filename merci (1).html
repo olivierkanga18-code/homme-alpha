@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Commande reçue — Homme Alpha</title>
+<meta name="robots" content="noindex">
+
+<!-- ZONE PIXEL META — même Pixel ID que la page principale -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+
+<style>
+  :root{
+    --bg-dark:#161A17;
+    --bg-cream:#EDE7D6;
+    --green-deep:#33513C;
+    --gold:#C9A24B;
+    --gold-light:#E4C878;
+    --ink:#1B1F1C;
+    --paper:#F6F2E7;
+    --radius:2px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:var(--sans);
+    background:
+      radial-gradient(circle at 15% -10%, rgba(201,162,75,0.15), transparent 55%),
+      linear-gradient(180deg, #14180F 0%, #161A17 60%, #1B211C 100%);
+    color:var(--paper);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:var(--radius);
+    max-width:420px;
+    width:100%;
+    padding:34px 26px 28px;
+    text-align:center;
+  }
+  .icon{
+    display:flex;
+    justify-content:center;
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:24px;
+    margin-bottom:10px;
+  }
+  .sub{
+    font-size:14.5px;
+    color:#5C5C54;
+    margin-bottom:26px;
+    line-height:1.5;
+  }
+  .sub strong{ color:var(--ink); }
+
+  .steps{
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+    background:var(--bg-cream);
+    border-radius:var(--radius);
+    padding:18px 16px;
+    margin-bottom:24px;
+  }
+  .step{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    font-size:13.5px;
+    color:#3A3A34;
+  }
+  .step-num{
+    width:21px; height:21px;
+    border-radius:50%;
+    background:var(--green-deep);
+    color:var(--paper);
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    margin-top:1px;
+  }
+
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:15px;
+    padding:15px 20px;
+    border-radius:var(--radius);
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    width:100%;
+  }
+  .btn-whatsapp{
+    background:#25D366;
+    color:#0B2E13;
+    margin-bottom:12px;
+  }
+  .btn-secondary{
+    background:transparent;
+    color:#6B6B60;
+    font-size:13px;
+    font-weight:500;
+  }
+
+  .reassur{
+    margin-top:20px;
+    padding-top:18px;
+    border-top:1px solid #E6E0CE;
+    font-size:12px;
+    color:#8A8A80;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="icon">
+      <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="11" fill="#33513C"/>
+        <path d="M7 12.5l3 3 7-7" stroke="#F6F2E7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>Commande bien reçue</h1>
+    <p class="sub">Merci <strong id="nomClient">!</strong> Votre commande <strong>Homme Alpha</strong> a été enregistrée. Un agent vous appelle très vite pour confirmer.</p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <span>Vous recevez un appel de confirmation sous peu</span>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <span>Votre commande est préparée et expédiée</span>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <span>Vous payez uniquement à la réception, en toute sécurité</span>
+      </div>
+    </div>
+
+    <a href="#" class="btn btn-whatsapp" id="whatsappBtn" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.78 14.11c-.24.68-1.19 1.24-1.95 1.4-.52.11-1.2.2-3.48-.75-2.92-1.21-4.8-4.17-4.95-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.11.31.02.5-.09.19-.14.31-.27.48-.14.17-.29.38-.41.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.61-.07.16-.19.7-.82.88-1.1.19-.28.37-.24.62-.15.26.09 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+      Confirmer aussi sur WhatsApp
+    </a>
+
+    <a href="index.html" class="btn btn-secondary">← Retour à l'accueil</a>
+
+    <div class="reassur">Colis discret · Paiement à la livraison · Livraison dans tout le pays</div>
+  </div>
+
+<script>
+  // Récupère le nom et la ville transmis par la landing page via l'URL
+  const params = new URLSearchParams(window.location.search);
+  const nom = params.get('nom') || '';
+  const ville = params.get('ville') || '';
+
+  if(nom){
+    document.getElementById('nomClient').textContent = nom + ' !';
+  }
+
+  // ⚠️ REMPLACE PAR TON NUMERO WHATSAPP BUSINESS (format international, sans le +)
+  const WHATSAPP_NUMBER = "2250700000000";
+
+  const waMessage = encodeURIComponent(
+    `Bonjour, je viens de commander Homme Alpha (100g) sur votre site. Nom : ${nom}. Ville : ${ville}. Merci de confirmer ma commande.`
+  );
+  document.getElementById('whatsappBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
+
+  // Evénement Pixel Meta — Lead confirmé (page de remerciement atteinte)
+  if(typeof fbq === 'function'){
+    fbq('track', 'Lead', { content_name: 'Homme Alpha - Confirmation', value: 12000, currency: 'XOF' });
+  }
+</script>
+
+</body>
+</html>
