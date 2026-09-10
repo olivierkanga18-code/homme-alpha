@@ -327,9 +327,10 @@
 <!-- ===== HERO CARD ===== -->
 <header class="hero">
   <div class="hero-card no-image">
-    <!-- Image masquée temporairement pour la phase MVP.
-         Pour la réactiver : retirer style="display:none" ci-dessous ET retirer la classe "no-image" ci-dessus. -->
-    <img src="hero-homme.webp" width="442" height="700" fetchpriority="high" style="display:none;" alt="Homme souriant, vitalité et confiance retrouvées avec ALVÉO Intime">
+    <!-- Image masquée temporairement pour la phase MVP (et non chargée du tout, pour ne pas gaspiller de bande passante).
+         Pour la réactiver : remplacer data-src par src, ajouter fetchpriority="high", retirer style="display:none" ci-dessous,
+         retirer la classe "no-image" ci-dessus, et remettre le <link rel="preload"> en haut du fichier. -->
+    <img data-src="hero-homme.webp" width="442" height="700" style="display:none;" alt="Homme souriant, vitalité et confiance retrouvées avec ALVÉO Intime">
 
     <div class="hero-top">
       <!-- Badge masqué pour aller plus vite au titre -- retirer style="display:none" pour le réactiver -->
@@ -665,7 +666,11 @@
     submitBtn.textContent = "Envoi en cours...";
 
     const prixTotal = qty * PRIX_UNITAIRE;
-    const dateStr = new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Abidjan' });
+    const dateStr = new Date().toLocaleString('fr-FR', {
+      timeZone: 'Africa/Abidjan',
+      day: '2-digit', month: '2-digit', year: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
     const payload = {
       date: dateStr, nom, lieu, telephone: tel, qte: qty, prix: prixTotal,
       angle: tracking.angle, source: tracking.source, campagne: tracking.campagne,
@@ -680,7 +685,7 @@
       });
     } catch(err) {}
 
-    const redirectParams = new URLSearchParams({ nom, tel, lieu, qte, prix: prixTotal });
+    const redirectParams = new URLSearchParams({ nom, tel, lieu, qte: qty, prix: prixTotal });
     setTimeout(() => { window.location.href = "merci.html?" + redirectParams.toString(); }, 400);
   });
 </script>
