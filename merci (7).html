@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dernière étape — ALVÉO Intime</title>
+
+<!-- ============================================================
+     META PIXEL — désactivé pour l'instant (pas de Pixel ALVÉO fourni).
+     Cette page n'est atteinte QUE si le formulaire a bien été soumis,
+     donc l'événement Lead ici reflète une vraie commande, pas un simple clic.
+     Pour l'activer : décommenter le bloc ci-dessous et remplacer
+     'TON_PIXEL_ID' par l'ID réel du Pixel ALVÉO.
+     ============================================================ -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'TON_PIXEL_ID');
+fbq('track', 'PageView');
+fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=TON_PIXEL_ID&ev=Lead&noscript=1"
+/></noscript>
+-->
+<!-- ============================================================
+     FIN META PIXEL
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --navy-deep:#08121C;
+    --copper:#B87333;
+    --copper-light:#D9A066;
+    --cream:#F4F1EA;
+    --slate:#34495E;
+    --copper-30: color-mix(in srgb, var(--copper) 32%, var(--cream));
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    background:var(--cream);
+    color:var(--navy);
+    font-family:'Inter', sans-serif;
+    padding:64px 24px 32px;
+    position:relative;
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:absolute;
+    inset:-20% -10% auto -10%;
+    height:120%;
+    background:
+      radial-gradient(45% 55% at 25% 15%, color-mix(in srgb, var(--copper) 26%, transparent) 0%, transparent 70%),
+      radial-gradient(50% 55% at 80% 10%, color-mix(in srgb, var(--navy) 16%, transparent) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .card{
+    position:relative;
+    z-index:1;
+    max-width:440px;
+    width:100%;
+    text-align:center;
+    background:#fff;
+    border-radius:24px;
+    padding:clamp(32px, 6vw, 48px) clamp(26px, 5vw, 40px);
+    box-shadow:0 30px 70px -28px rgba(13,27,42,0.28);
+  }
+  .icon{
+    width:70px; height:70px;
+    margin:0 auto 1.4rem;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 6px var(--copper-30), 0 16px 30px -14px rgba(13,27,42,0.45);
+  }
+  .icon svg{width:28px; height:28px; color:var(--copper-light); stroke-width:2.2;}
+  .brandline{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:0.95rem;
+    color:var(--copper);
+    margin-bottom:1.3rem;
+  }
+  .greet{
+    font-size:1rem;
+    font-weight:700;
+    color:var(--copper);
+    margin:0 0 1.1rem;
+  }
+  .highlight{
+    background:var(--copper-30);
+    color:var(--navy);
+    padding:0.03em 0.24em;
+    border-radius:6px;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--navy);
+    font-size:clamp(1.5rem, 4.4vw, 2rem);
+    margin:0 0 .85rem;
+    line-height:1.25;
+  }
+  p{
+    font-size:0.98rem;
+    color:var(--slate);
+    margin:0 0 1.8rem;
+    line-height:1.55;
+  }
+  .recap{
+    text-align:left;
+    background:var(--cream);
+    border-radius:14px;
+    padding:14px 16px;
+    margin:0 0 1.8rem;
+  }
+  .recap-row{display:flex;justify-content:space-between;gap:10px;font-size:0.85rem;padding:5px 0;}
+  .recap-row span:first-child{color:var(--slate);}
+  .recap-row b{font-family:'Fraunces',serif;color:var(--copper);font-weight:600;white-space:nowrap;}
+  .actions{
+    display:flex;
+    justify-content:center;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    padding:1em 2em;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:1rem;
+    font-family:'Inter', sans-serif;
+  }
+  .btn-whatsapp{
+    background:var(--navy);
+    color:#fff;
+    border:2px solid var(--copper);
+    box-shadow:0 14px 30px -12px rgba(13,27,42,0.55);
+  }
+  footer{
+    position:relative;
+    z-index:1;
+    margin-top:1.6rem;
+    text-align:center;
+    font-family:'Fraunces', serif;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#9AA5B3;
+  }
+  footer span{color:var(--copper);}
+  @media (max-width: 480px){
+    body{ padding:40px 18px 24px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="brandline">ALVÉO Intime</div>
+    <p class="greet" id="greetLine">Bravo, on a bien reçu ta commande</p>
+    <h1><span class="highlight">Dernière étape</span> pour valider ta cure</h1>
+    <p>Écris-nous sur WhatsApp pour valider ta commande et recevoir ta posologie.</p>
+
+    <div class="recap" id="recapBox" style="display:none;">
+      <div class="recap-row"><span>Lieu de livraison</span><b id="recapLieu">—</b></div>
+      <div class="recap-row"><span>Quantité</span><b id="recapQte">—</b></div>
+      <div class="recap-row"><span>Total à la livraison</span><b id="recapPrix">—</b></div>
+    </div>
+
+    <div class="actions">
+      <a href="https://wa.me/2250769568958?text=Bonjour%2C%20je%20viens%20de%20passer%20commande%20sur%20le%20site%20ALV%C3%89O%2C%20je%20souhaite%20valider%20ma%20cure." target="_blank" rel="noopener" class="btn btn-whatsapp" id="waLink">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.94 9.94 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.63 0-3.15-.45-4.45-1.24l-.32-.19-3.11.82.83-3.03-.21-.31A8.17 8.17 0 0 1 3.84 12c0-4.53 3.68-8.2 8.2-8.2 4.53 0 8.2 3.68 8.2 8.2s-3.67 8.2-8.2 8.2zm4.51-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01a.93.93 0 0 0-.67.31c-.23.24-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+        Continuer sur WhatsApp
+      </a>
+    </div>
+
+    <footer>NOVEA <span>GROUP</span></footer>
+  </div>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var nom = params.get('nom') || '';
+    var tel = params.get('tel') || '';
+    var lieu = params.get('lieu') || '';
+    var qte = params.get('qte') || '';
+    var prix = params.get('prix') || '';
+    var prenom = nom.split(' ')[0] || '';
+
+    if (prenom) {
+      document.getElementById('greetLine').textContent = 'Bravo ' + prenom + ', on a bien reçu ta commande';
+    }
+
+    // Si on a les infos de la commande, on affiche le récap et on construit
+    // un message WhatsApp pré-rempli avec le détail — sinon on garde le
+    // message générique par défaut déjà présent dans le bouton.
+    if (nom && lieu && qte && prix) {
+      document.getElementById('recapBox').style.display = 'block';
+      document.getElementById('recapLieu').textContent = lieu;
+      document.getElementById('recapQte').textContent = qte + (qte > 1 ? ' cures' : ' cure');
+      document.getElementById('recapPrix').textContent = Number(prix).toLocaleString('fr-FR') + ' FCFA';
+
+      var message =
+        "Bonjour, je viens de passer commande sur le site ALVÉO 🌿\n" +
+        "Nom : " + nom + "\n" +
+        (tel ? "Téléphone : " + tel + "\n" : "") +
+        "Lieu de livraison : " + lieu + "\n" +
+        "Quantité : " + qte + "\n" +
+        "Total : " + Number(prix).toLocaleString('fr-FR') + " FCFA\n" +
+        "Je souhaite valider ma commande et recevoir la posologie.";
+
+      document.getElementById('waLink').href =
+        "https://wa.me/2250769568958?text=" + encodeURIComponent(message);
+    }
+  </script>
+</body>
+</html>

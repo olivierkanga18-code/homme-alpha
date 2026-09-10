@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>ALVÉO Intime — Mieux bander, plus d'énergie | NOVEA GROUP</title>
+<meta name="description" content="ALVÉO Intime : une meilleure qualité d'érection, plus de désir et d'énergie. Formule 100% naturelle, cure de 2 semaines. Paiement à la livraison.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Préchargement désactivé tant que l'image du hero est masquée (voir plus bas) -->
+<!-- <link rel="preload" as="image" href="hero-homme.webp"> -->
+<style>
+  :root{
+    --navy:#0D1B2A;--navy-deep:#08121C;--copper:#B87333;--copper-light:#D9A066;
+    --cream:#F4F1EA;--slate:#34495E;--white:#FFFFFF;--max:500px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--navy);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+  h1,h2{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:var(--navy);}
+  p{color:var(--slate);}
+
+  .hero{padding:26px 20px 30px;background:var(--navy);position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;top:-15%;left:50%;width:340px;height:340px;
+    background:radial-gradient(circle, rgba(184,115,51,0.22), transparent 70%);
+    transform:translateX(-50%);pointer-events:none;
+  }
+  .hero > *{position:relative;z-index:1;}
+  .hero-card{
+    text-align:center;position:relative;overflow:hidden;
+  }
+  .hero-card::before{
+    content:"";position:absolute;top:-40%;left:50%;width:260px;height:260px;
+    background:radial-gradient(circle, rgba(184,115,51,0.2), transparent 70%);
+    transform:translateX(-50%);
+  }
+  .hero-card img{
+    width:64%;max-height:220px;object-fit:contain;
+    margin:0 auto 18px;position:relative;z-index:1;
+    filter:drop-shadow(0 18px 26px rgba(13,27,42,0.35));
+  }
+  .eyebrow{position:relative;z-index:1;display:inline-block;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--copper-light);font-weight:800;background:rgba(184,115,51,0.16);border:1px solid rgba(184,115,51,0.35);padding:6px 13px;border-radius:100px;margin-bottom:14px;}
+  .hero-card h1{position:relative;z-index:1;font-size:25px;line-height:1.42;letter-spacing:0.015em;font-weight:600;margin-bottom:14px;color:var(--cream);}
+  .hl{background:var(--copper);color:var(--navy-deep);padding:2px 9px;border-radius:7px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+  .hero-card .lede{position:relative;z-index:1;font-size:14.5px;color:#D3DAE2;margin-bottom:6px;}
+  .hero-card .lede2{position:relative;z-index:1;font-size:12.5px;color:#8B95A3;margin-bottom:20px;}
+
+  .cta-price-btn{
+    position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;
+    width:100%;background:var(--copper);color:var(--navy-deep);border:none;border-radius:14px;
+    padding:15px 20px;text-decoration:none;cursor:pointer;font-family:'Inter',sans-serif;
+    box-shadow:0 16px 28px -14px rgba(184,115,51,0.55);
+  }
+  .cta-price-btn .txt{font-weight:800;font-size:15px;text-align:left;}
+  .cta-price-btn .txt small{display:block;font-size:11px;font-weight:600;font-style:italic;opacity:0.65;margin-top:3px;}
+  .cta-price-btn .price{font-family:'Fraunces',serif;font-size:19px;font-weight:700;}
+  .hero-note{position:relative;z-index:1;font-size:11.5px;color:#8B95A3;margin-top:12px;}
+  .hero-quote{position:relative;z-index:1;font-size:11.5px;font-style:italic;color:#B9C2CE;margin-top:10px;line-height:1.5;}
+  .quote-tag{display:block;width:max-content;margin:0 auto 8px;font-style:normal;font-weight:800;font-size:10px;letter-spacing:0.03em;text-transform:uppercase;color:var(--copper-light);background:rgba(217,160,102,0.14);padding:4px 10px;border-radius:100px;}
+  .quote-author{display:block;font-style:normal;font-weight:700;color:var(--copper-light);margin-top:4px;font-size:10.5px;}
+  .rating-line{font-size:12.5px;color:var(--copper-light);font-weight:700;margin-bottom:14px;position:relative;z-index:1;}
+
+  /* ===== SECTION TRAITEMENT ===== */
+  .traitement{padding:36px 0 8px;}
+  .traitement-head{text-align:center;margin-bottom:22px;}
+  .traitement-head .eyebrow{margin-bottom:12px;}
+  .traitement-head h2{font-size:22px;}
+
+  .steps-list{display:flex;flex-direction:column;gap:0;margin-bottom:24px;}
+  .step-item{display:flex;gap:14px;padding:0 0 22px;position:relative;}
+  .step-item:not(:last-child)::before{
+    content:"";position:absolute;left:18px;top:38px;bottom:-4px;width:1.6px;
+    background:rgba(184,115,51,0.22);
+  }
+  .step-num{
+    width:38px;height:38px;border-radius:50%;background:var(--navy);border:1.6px solid var(--copper);
+    display:flex;align-items:center;justify-content:center;flex:none;
+    font-family:'Inter',sans-serif;font-weight:800;font-size:13.5px;letter-spacing:0.02em;color:var(--copper-light);
+    box-shadow:0 8px 18px -12px rgba(13,27,42,0.2);position:relative;z-index:1;
+  }
+  .step-body{padding-top:5px;}
+  .step-day{display:block;font-size:10.5px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--copper);margin-bottom:4px;}
+  .step-body b{display:block;font-family:'Fraunces',serif;font-size:15.5px;color:var(--navy);margin-bottom:3px;}
+  .step-body p{font-size:13px;color:var(--slate);}
+
+  .safe-box{background:var(--white);border-radius:18px;padding:20px 18px;box-shadow:0 16px 34px -24px rgba(13,27,42,0.18);}
+  .safe-box h3{font-family:'Fraunces',serif;font-size:16px;color:var(--navy);margin-bottom:14px;text-align:center;}
+  .safe-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+  .med-note{font-size:11.5px;color:var(--slate);line-height:1.55;margin-bottom:14px;}
+
+  .med-accordion-q{
+    width:100%;text-align:left;background:var(--cream);border:none;border-radius:12px;
+    padding:12px 14px;margin-bottom:0;display:flex;justify-content:space-between;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;color:var(--navy);cursor:pointer;
+  }
+  .med-accordion-q svg{width:14px;height:14px;stroke:var(--copper);fill:none;stroke-width:2.4;flex:none;transition:transform .25s ease;}
+  .med-accordion-q.open svg{transform:rotate(45deg);}
+  .med-accordion-a{max-height:0;overflow:hidden;transition:max-height .28s ease;background:var(--cream);border-radius:0 0 12px 12px;}
+  .med-accordion-a p{font-size:11.5px;color:var(--slate);line-height:1.55;padding:0 14px 14px;}
+  .safe-box .posologie-note{margin-top:14px;}
+  .safe-item{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--navy);}
+  .safe-item svg{width:16px;height:16px;stroke:var(--copper);fill:none;stroke-width:2.5;flex:none;}
+  .posologie-note{display:flex;align-items:flex-start;gap:10px;background:var(--cream);border-radius:12px;padding:13px 14px;}
+  .posologie-note svg{width:18px;height:18px;stroke:var(--copper);fill:none;stroke-width:1.8;flex:none;margin-top:1px;}
+  .posologie-note span{font-size:12px;color:var(--slate);line-height:1.5;font-weight:600;}
+
+  .traitement-cta{margin-top:24px;}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;text-align:center;background:var(--copper);color:var(--navy-deep);
+    font-weight:800;font-size:15.5px;padding:17px;border:none;border-radius:14px;
+    text-decoration:none;box-shadow:0 16px 28px -14px rgba(184,115,51,0.55);
+    font-family:'Inter',sans-serif;cursor:pointer;
+  }
+  .btn .hand{font-size:16px;}
+
+  /* ===== STATS RESULTATS (léger) ===== */
+  .stat-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:22px 20px 0;}
+  .stat-chip{background:var(--white);border-radius:14px;padding:14px 6px;text-align:center;box-shadow:0 10px 24px -18px rgba(13,27,42,0.15);}
+  .stat-chip b{display:block;font-family:'Fraunces',serif;font-size:16px;color:var(--copper);}
+  .stat-chip span{font-size:10px;color:var(--slate);font-weight:600;}
+
+  /* ===== BENEFITS PILLS ===== */
+  .benefits{padding:30px 0 6px;}
+  .benefits-title{text-align:center;margin-bottom:18px;}
+  .benefits-title h2{font-size:20px;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+  .pill{display:flex;align-items:center;gap:7px;background:var(--white);border-radius:100px;padding:10px 15px;font-size:12.5px;font-weight:700;color:var(--navy);box-shadow:0 8px 20px -16px rgba(13,27,42,0.18);}
+  .pill svg{width:15px;height:15px;stroke:var(--copper);fill:none;stroke-width:2.4;}
+
+  /* ===== TRUST ROW ===== */
+  .trust-row{padding:28px 0 6px;}
+  .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .trust-cell{display:flex;align-items:center;gap:10px;background:var(--white);border-radius:14px;padding:13px 14px;box-shadow:0 8px 20px -16px rgba(13,27,42,0.14);}
+  .trust-cell .ic{width:34px;height:34px;border-radius:50%;background:rgba(184,115,51,0.12);display:flex;align-items:center;justify-content:center;flex:none;}
+  .trust-cell svg{width:16px;height:16px;stroke:var(--copper);fill:none;stroke-width:2.1;}
+  .trust-cell span{font-size:11.5px;font-weight:700;color:var(--navy);line-height:1.25;}
+
+  /* ===== AVIS ===== */
+  .reviews{padding:32px 0 6px;}
+  .reviews-head{text-align:center;margin-bottom:18px;}
+  .reviews-head .stars-row{display:flex;justify-content:center;gap:3px;margin-bottom:8px;}
+  .reviews-head .stars-row svg{width:15px;height:15px;fill:var(--copper);stroke:none;}
+  .reviews-head b{font-family:'Fraunces',serif;font-size:14.5px;color:var(--navy);}
+  .reviews-head span{font-size:12px;color:var(--slate);}
+
+  .review-card{background:var(--white);border-radius:16px;padding:16px 17px;margin-bottom:11px;box-shadow:0 10px 24px -18px rgba(13,27,42,0.14);}
+  .review-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .avatar{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--copper-light);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:12.5px;flex:none;}
+  .r-name{font-size:13px;font-weight:700;color:var(--navy);}
+  .r-loc{font-size:11px;color:var(--slate);}
+  .r-stars{display:flex;gap:2px;margin-left:auto;}
+  .r-stars svg{width:10.5px;height:10.5px;fill:var(--copper);stroke:none;}
+  .review-card p{font-size:13px;font-style:italic;color:var(--slate);}
+
+  /* ===== ORDER ===== */
+  .order{padding:34px 0 60px;}
+  .order-head{text-align:center;margin-bottom:18px;}
+  .order-head h2{font-size:21px;}
+  .order-head p{font-size:13px;margin-top:6px;}
+
+  .form-card{background:var(--white);border-radius:20px;padding:22px 18px;box-shadow:0 24px 50px -30px rgba(13,27,42,0.2);}
+
+  .product-line{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid rgba(52,73,94,0.12);}
+  .product-line img{width:48px;height:48px;object-fit:cover;border-radius:10px;}
+  .product-line .pname{font-family:'Fraunces',serif;font-size:15px;color:var(--navy);}
+  .product-line .psub{font-size:11px;color:var(--slate);}
+  .product-line .pval{margin-left:auto;font-family:'Fraunces',serif;font-size:17px;color:var(--copper);}
+
+  .qty-row{display:flex;align-items:center;justify-content:space-between;background:var(--cream);border-radius:12px;padding:10px 10px 10px 15px;margin-bottom:16px;}
+  .qty-row span.lbl{font-size:13.5px;font-weight:600;color:var(--navy);}
+  .qty-control{display:flex;align-items:center;gap:14px;}
+  .qty-btn{width:32px;height:32px;border-radius:8px;border:none;background:var(--navy);color:var(--cream);font-size:17px;cursor:pointer;}
+  .qty-btn:active{background:var(--copper);}
+  #qtyVal{font-family:'Fraunces',serif;font-size:16.5px;min-width:16px;text-align:center;}
+
+  .field{margin-bottom:13px;}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+  .field input{
+    width:100%;padding:14px;border:1.6px solid rgba(52,73,94,0.18);border-radius:11px;
+    font-size:16px;font-family:'Inter',sans-serif;color:var(--navy);background:var(--cream);
+  }
+  .field input:focus{outline:none;border-color:var(--copper);}
+  .field.error input{border-color:#C0392B;}
+  .field .err-msg{display:none;font-size:11.5px;color:#C0392B;margin-top:4px;}
+  .field.error .err-msg{display:block;}
+
+  .total-line{display:flex;justify-content:space-between;align-items:baseline;background:rgba(184,115,51,0.08);border-radius:12px;padding:12px 14px;margin:14px 0;}
+  .total-line .lbl{font-size:13px;color:var(--slate);font-weight:600;}
+  .total-line .val{font-family:'Fraunces',serif;font-size:20px;color:var(--navy);}
+
+  .submit-btn{
+    width:100%;background:var(--copper);color:var(--navy-deep);
+    font-weight:800;font-size:15.5px;padding:17px;border:none;border-radius:12px;
+    cursor:pointer;box-shadow:0 16px 28px -14px rgba(184,115,51,0.55);font-family:'Inter',sans-serif;
+  }
+  .submit-btn:disabled{opacity:0.6;}
+  .mini-review{text-align:center;font-size:11px;font-style:italic;color:var(--slate);margin-top:9px;line-height:1.5;}
+  .privacy-note{text-align:center;font-size:11px;color:var(--slate);margin-top:12px;}
+  .delivery-badge{
+    display:flex;align-items:flex-start;gap:9px;
+    background:rgba(184,115,51,0.08);border:1px solid rgba(184,115,51,0.22);
+    border-radius:10px;padding:11px 13px;margin-bottom:16px;
+  }
+  .delivery-badge svg{width:17px;height:17px;stroke:var(--copper);fill:none;stroke-width:1.8;flex:none;margin-top:1px;}
+  .delivery-badge .db-main{font-size:12.5px;font-weight:700;color:var(--copper);}
+  .delivery-badge .db-sub{font-size:10px;color:#9AA5B3;margin-top:3px;line-height:1.5;}
+  .guarantee-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:12px;}
+  .guarantee-row span{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--slate);font-weight:600;}
+  .guarantee-row svg{width:12px;height:12px;stroke:var(--copper);fill:none;stroke-width:2.3;}
+
+  footer{background:var(--navy-deep);color:#8B95A3;padding:30px 0 96px;text-align:center;margin-top:10px;}
+  footer p{color:#8B95A3;font-size:11.5px;line-height:1.6;max-width:40ch;margin-left:auto;margin-right:auto;}
+  footer .footnote-small{color:#5C6673;font-size:10px;margin-top:8px;}
+  footer .signature-brand{font-family:'Fraunces',serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5C6673;margin-top:22px;}
+
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--white);padding:11px 18px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    box-shadow:0 -10px 26px -16px rgba(13,27,42,0.28);
+    transform:translateY(100%);transition:transform .3s ease;
+  }
+  .sticky-cta.show{transform:translateY(0);}
+  .sticky-cta .info b{display:block;font-family:'Fraunces',serif;color:var(--navy);font-size:15px;}
+  .sticky-cta .info span{font-size:10px;color:var(--slate);}
+  .sticky-cta a{background:var(--copper);color:var(--navy-deep);font-weight:800;font-size:13.5px;padding:11px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;}
+
+/* ==========================================================
+   OPTIMISATION DESKTOP — s'applique uniquement à partir de 880px.
+   Le mobile (tout ce qui précède) reste strictement inchangé.
+   ========================================================== */
+@media (min-width: 880px){
+
+  :root{ --max:640px; }
+
+  /* ----- HERO : passage en deux colonnes ----- */
+  .hero{padding:80px 40px;}
+  .hero::before{width:600px;height:600px;}
+  .hero-card{
+    display:grid;
+    grid-template-columns:1fr 0.9fr;
+    align-items:center;
+    gap:64px;
+    max-width:1120px;
+    margin:0 auto;
+    text-align:left;
+  }
+  .hero-card::before{top:-30%;left:70%;width:420px;height:420px;}
+  .hero-card img{
+    grid-column:2;
+    grid-row:1 / span 20;
+    width:100%;
+    max-height:460px;
+    margin:0;
+    justify-self:center;
+  }
+  .eyebrow,
+  .hero-card h1,
+  .hero-card .lede,
+  .hero-card .lede2,
+  .rating-line,
+  .hero-card .cta-price-btn,
+  .hero-quote{ grid-column:1; }
+
+  .hero-card h1{font-size:46px;line-height:1.28;max-width:14ch;}
+  .hero-card .lede{font-size:18px;max-width:42ch;}
+  .hero-card .lede2{font-size:14.5px;max-width:42ch;}
+  .rating-line{font-size:14px;}
+
+  .hero-card .cta-price-btn{
+    width:auto;justify-content:flex-start !important;
+    padding:17px 36px;margin-top:8px;
+  }
+  .cta-price-btn .txt{text-align:left;}
+  .hero-quote{max-width:440px;}
+  .quote-tag{margin-left:0;}
+
+  /* ----- TRAITEMENT ----- */
+  .traitement-head{text-align:left;}
+  .traitement-head .eyebrow{margin-bottom:14px;}
+  .safe-box, .steps-list{max-width:640px;}
+
+  /* ----- BARRE DE CONFIANCE : une seule ligne ----- */
+  .trust-grid{grid-template-columns:repeat(4, 1fr);gap:16px;}
+
+  /* ----- AVIS : grille 3 colonnes ----- */
+  .reviews .wrap{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;align-items:start;}
+  .reviews-head{grid-column:1 / -1;margin-bottom:8px;}
+  .review-card{margin-bottom:0;}
+
+  /* ----- COMMANDE : formulaire recentré, pas étiré ----- */
+  .order-head{text-align:center;}
+  .form-card{max-width:480px;margin:0 auto;}
+  .price-strip{max-width:480px;margin:0 auto 14px;}
+
+  /* ----- BARRE FIXE : pilule flottante plutôt que bandeau plein largeur ----- */
+  .sticky-cta{
+    left:50%;right:auto;bottom:24px;
+    transform:translate(-50%, 140%);
+    max-width:480px;width:calc(100% - 48px);
+    border-radius:16px;
+  }
+  .sticky-cta.show{transform:translate(-50%, 0);}
+
+  .hero-card.no-image{
+    grid-template-columns:1fr;
+    max-width:680px;
+    text-align:center;
+  }
+  .hero-card.no-image::before{left:50%;}
+  .hero-card.no-image h1{max-width:none;margin-left:auto;margin-right:auto;}
+  .hero-card.no-image .lede,
+  .hero-card.no-image .lede2{max-width:52ch;margin-left:auto;margin-right:auto;}
+  .hero-card.no-image .hero-quote{max-width:440px;margin-left:auto;margin-right:auto;}
+  .hero-card.no-image .quote-tag{margin-left:auto;margin-right:auto;}
+  .hero-card.no-image .cta-price-btn{justify-content:center !important;margin-left:auto;margin-right:auto;}
+
+  footer{padding:44px 0 60px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO CARD ===== -->
+<header class="hero">
+  <div class="hero-card no-image">
+    <!-- Image masquée temporairement pour la phase MVP.
+         Pour la réactiver : retirer style="display:none" ci-dessous ET retirer la classe "no-image" ci-dessus. -->
+    <img src="hero-homme.webp" width="442" height="700" fetchpriority="high" style="display:none;" alt="Homme souriant, vitalité et confiance retrouvées avec ALVÉO Intime">
+    <!-- Badge masqué pour aller plus vite au titre -- retirer style="display:none" pour le réactiver -->
+    <div class="eyebrow" style="display:none;">Vitalité masculine · 100% naturel</div>
+    <h1>Mieux <span class="hl">bander</span>. Plus d'envie. Plus d'énergie. Plus de confiance.</h1>
+    <p class="lede">Retrouve une meilleure qualité d'érection, plus de désir et l'énergie nécessaire pour profiter pleinement de ta vie intime.</p>
+    <p class="lede2">Pensée pour les hommes de 30 ans et +, une formule 100% naturelle et super concentrée à base de 4 plantes.</p>
+
+    <p class="rating-line">⭐ 4.9/5 · Les avis de nos clients</p>
+
+    <a href="#traitement" class="cta-price-btn" style="justify-content:center;">
+      <span class="txt" style="text-align:center;">Je veux voir le traitement<small>Comment ça marche ?</small></span>
+    </a>
+    <p class="hero-quote"><span class="quote-tag">★ Avis client</span>« Enfin un médicament qui fonctionne vraiment. Wahou, j'ai du mal à y croire moi qui ai 53 ans. Merci ALVÉO. »<span class="quote-author">— Jean K., 53 ans</span></p>
+  </div>
+</header>
+
+<!-- ===== SECTION TRAITEMENT ===== -->
+<section class="traitement" id="traitement">
+  <div class="wrap">
+    <div class="traitement-head">
+      <div class="eyebrow">Le protocole ALVÉO</div>
+      <h2>Comment se déroule ta cure</h2>
+    </div>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">J1</div>
+        <div class="step-body">
+          <span class="step-day">Jour 1</span>
+          <b>Début de la cure</b>
+          <p>Tu commences ALVÉO Intime dès réception, en suivant la posologie fournie avec ton colis.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">J3</div>
+        <div class="step-body">
+          <span class="step-day">Jour 3</span>
+          <b>Premiers résultats</b>
+          <p>Les premiers effets se font sentir dans les 3 jours : plus d'énergie, plus d'envie, plus de confiance.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">S2</div>
+        <div class="step-body">
+          <span class="step-day">Semaine 2</span>
+          <b>Fin de la cure</b>
+          <p>Après 2 semaines, ta cure ALVÉO Intime est terminée.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">M8</div>
+        <div class="step-body">
+          <span class="step-day">8 mois plus tard</span>
+          <b>Des effets qui durent</b>
+          <p>Les bienfaits restent actifs dans ton organisme pendant 8 mois minimum*.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="safe-box">
+      <h3>😌 Une cure en toute sérénité</h3>
+      <div class="safe-grid">
+        <div class="safe-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Pas de migraine</div>
+        <div class="safe-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Pas de vertige</div>
+        <div class="safe-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Pas de narine encombrée</div>
+        <div class="safe-item"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Pas de malaise</div>
+      </div>
+      <button type="button" class="med-accordion-q">
+        Tu souffres de diabète ou de crise de tension ?
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+      </button>
+      <div class="med-accordion-a">
+        <p>Nos clients souffrant de diabète ou de crise de tension le consomment très bien et sans problème. Si toutefois tu as un cas beaucoup plus spécifique, merci de demander l'avis d'un professionnel de santé.</p>
+      </div>
+      <div class="posologie-note">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+        <span>La posologie détaillée te sera fournie avec ton colis. Super simple d'utilisation.</span>
+      </div>
+    </div>
+
+    <a href="#commande" class="btn traitement-cta"><span class="hand">👉</span> Je commande ma cure — Paiement à la livraison</a>
+  </div>
+</section>
+
+<!-- ===== TRUST ROW ===== -->
+<section class="trust-row">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3z"/></svg></div><span>100% naturel</span></div>
+      <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10h18M3 6h18v14H3z"/></svg></div><span>Paiement livraison</span></div>
+      <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0l-9 6-9-6m18 0l-9-5-9 5"/></svg></div><span>Colis discret</span></div>
+      <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M11 3a4 4 0 110 8 4 4 0 010-8z"/></svg></div><span>500+ clients</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVIS ===== -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div class="stars-row">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+      </div>
+      <b>4.9/5</b> <span>· Basé sur 513 hommes</span>
+    </div>
+
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar">M.</div>
+        <div><div class="r-name">Marc K.</div><div class="r-loc">Abidjan</div></div>
+        <div class="r-stars">
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        </div>
+      </div>
+      <p>Dès la première semaine j'ai senti la différence. Plus d'énergie, plus envie, et une vraie confiance retrouvée.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar">S.</div>
+        <div><div class="r-name">Serge A.</div><div class="r-loc">Yamoussoukro</div></div>
+        <div class="r-stars">
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        </div>
+      </div>
+      <p>Facile à prendre, formule naturelle, et surtout des résultats qui durent. Livraison rapide et discrète.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-head">
+        <div class="avatar">E.</div>
+        <div><div class="r-name">Éric D.</div><div class="r-loc">Bouaké</div></div>
+        <div class="r-stars">
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+          <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
+        </div>
+      </div>
+      <p>Après 8 ans de couple, ça a redonné un vrai coup d'élan. Je recommande sans hésiter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMANDE ===== -->
+<section class="order" id="commande">
+  <div class="wrap">
+    <div class="order-head">
+      <h2>Commence ta cure en 30 secondes</h2>
+      <p>Remplis le formulaire, on te confirme sur WhatsApp.</p>
+    </div>
+
+    <form id="orderForm" class="form-card" novalidate>
+      <div class="product-line">
+        <img src="produit-sachet.jpg" width="48" height="48" loading="lazy" alt="ALVÉO Intime, 100g">
+        <div>
+          <div class="pname">ALVÉO Intime</div>
+          <div class="psub">Cure 100g · 4 plantes</div>
+        </div>
+        <div class="pval">7 500 F</div>
+      </div>
+
+      <div class="delivery-badge">
+        <svg viewBox="0 0 24 24"><path d="M3 10h11v8H3zM14 13h4l3 3v2h-7z"/><circle cx="7" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg>
+        <div>
+          <div class="db-main">Livraison gratuite à Abidjan*</div>
+          <div class="db-sub">*1 500 FCFA de frais de livraison supplémentaire pour Songon, Anyama, Bassam, Ebimpé et les zones hors d'Abidjan.</div>
+        </div>
+      </div>
+
+      <div class="qty-row">
+        <span class="lbl">Quantité</span>
+        <div class="qty-control">
+          <button type="button" class="qty-btn" id="qtyMinus" aria-label="Diminuer">–</button>
+          <span id="qtyVal">1</span>
+          <button type="button" class="qty-btn" id="qtyPlus" aria-label="Augmenter">+</button>
+        </div>
+      </div>
+
+      <div class="field" id="field-nom">
+        <label for="nom">Ton nom complet</label>
+        <input type="text" id="nom" name="nom" placeholder="Ton nom et prénom" autocomplete="name">
+        <div class="err-msg">Merci d'indiquer ton nom.</div>
+      </div>
+
+      <div class="field" id="field-tel">
+        <label for="tel">Ton numéro de téléphone</label>
+        <input type="tel" id="tel" name="tel" inputmode="tel" placeholder="Ex : 07 69 56 89 58" autocomplete="tel">
+        <div class="err-msg">Merci d'indiquer un numéro valide.</div>
+      </div>
+
+      <div class="field" id="field-lieu">
+        <label for="lieu">Ton lieu de livraison</label>
+        <input type="text" id="lieu" name="lieu" placeholder="Ville, commune, quartier" autocomplete="address-level2">
+        <div class="err-msg">Merci d'indiquer ton lieu de livraison.</div>
+      </div>
+
+      <!-- Total masqué temporairement — retirer style="display:none" pour le réafficher -->
+      <div class="total-line" style="display:none;">
+        <span class="lbl">Total à payer à la livraison</span>
+        <span class="val" id="totalVal">7 500 FCFA</span>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Je commande ma cure maintenant — Paiement à la livraison</button>
+      <p class="mini-review">« Ça fait grave bander 👍🏽 en plus pas de migraine, de façon naturelle même. Merci la team, on est ensemble. »</p>
+
+      <div class="guarantee-row">
+        <span><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3z"/></svg>100% naturel</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-linecap="round"/></svg>Paiement à la livraison</span>
+        <span><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0l-9 6-9-6m18 0l-9-5-9 5"/></svg>Colis discret</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>ALVÉO Intime est un complément alimentaire pour adulte. Garde-le hors de portée des enfants.</p>
+  <p class="footnote-small">*Effet variable selon les personnes.</p>
+  <div class="signature-brand">Un produit NOVEA GROUP</div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <div class="info"><b>Paiement à la livraison</b><span>Livraison gratuite à Abidjan*</span></div>
+  <a href="#commande">Je commande</a>
+</div>
+
+<script>
+  const APPS_SCRIPT_URL = "REMPLACER_PAR_URL_DEPLOIEMENT_APPS_SCRIPT";
+  const PRIX_UNITAIRE = 7500;
+
+  const params = new URLSearchParams(window.location.search);
+  const tracking = {
+    angle: params.get('angle') || '',
+    source: params.get('utm_source') || '',
+    campagne: params.get('utm_campaign') || '',
+    adset: params.get('utm_adset') || '',
+    creatif: params.get('utm_content') || ''
+  };
+
+  let qty = 1;
+  const qtyValEl = document.getElementById('qtyVal');
+  const totalValEl = document.getElementById('totalVal');
+  function formatFcfa(n){ return n.toLocaleString('fr-FR') + " FCFA"; }
+  function updateTotal(){ qtyValEl.textContent = qty; totalValEl.textContent = formatFcfa(qty * PRIX_UNITAIRE); }
+  document.getElementById('qtyMinus').addEventListener('click', () => { if(qty > 1){ qty--; updateTotal(); } });
+  document.getElementById('qtyPlus').addEventListener('click', () => { if(qty < 5){ qty++; updateTotal(); } });
+  updateTotal();
+
+  const medQ = document.querySelector('.med-accordion-q');
+  const medA = document.querySelector('.med-accordion-a');
+  if(medQ){
+    medQ.addEventListener('click', () => {
+      const isOpen = medQ.classList.contains('open');
+      medQ.classList.toggle('open', !isOpen);
+      medA.style.maxHeight = isOpen ? null : medA.scrollHeight + "px";
+    });
+  }
+
+  const stickyCta = document.getElementById('stickyCta');
+  const orderSection = document.getElementById('commande');
+  window.addEventListener('scroll', () => {
+    const heroBottom = document.querySelector('.hero').getBoundingClientRect().bottom;
+    const orderTop = orderSection.getBoundingClientRect().top;
+    if(heroBottom < 0 && orderTop > window.innerHeight * 0.35){ stickyCta.classList.add('show'); }
+    else { stickyCta.classList.remove('show'); }
+  });
+
+  const form = document.getElementById('orderForm');
+  const submitBtn = document.getElementById('submitBtn');
+  function setError(fieldId, hasError){ document.getElementById(fieldId).classList.toggle('error', hasError); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const nom = document.getElementById('nom').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const lieu = document.getElementById('lieu').value.trim();
+    const telDigits = tel.replace(/\D/g, '');
+    let valid = true;
+
+    setError('field-nom', nom.length < 2); if(nom.length < 2) valid = false;
+    setError('field-tel', telDigits.length < 8); if(telDigits.length < 8) valid = false;
+    setError('field-lieu', lieu.length < 2); if(lieu.length < 2) valid = false;
+    if(!valid) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Envoi en cours...";
+
+    const prixTotal = qty * PRIX_UNITAIRE;
+    const dateStr = new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Abidjan' });
+    const payload = {
+      date: dateStr, nom, lieu, telephone: tel, qte: qty, prix: prixTotal,
+      angle: tracking.angle, source: tracking.source, campagne: tracking.campagne,
+      adset: tracking.adset, creatif: tracking.creatif, statut: "Nouveau"
+    };
+
+    try {
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST', mode: 'no-cors', keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+    } catch(err) {}
+
+    const redirectParams = new URLSearchParams({ nom, tel, lieu, qte, prix: prixTotal });
+    setTimeout(() => { window.location.href = "merci.html?" + redirectParams.toString(); }, 400);
+  });
+</script>
+
+</body>
+</html>
