@@ -190,7 +190,6 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
     <div class="recap" id="recapBox" style="display:none;">
       <div class="recap-row"><span>Lieu de livraison</span><b id="recapLieu">—</b></div>
       <div class="recap-row"><span>Quantité</span><b id="recapQte">—</b></div>
-      <div class="recap-row"><span>Total à la livraison</span><b id="recapPrix">—</b></div>
     </div>
 
     <div class="actions">
@@ -219,11 +218,13 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
     // Si on a les infos de la commande, on affiche le récap et on construit
     // un message WhatsApp pré-rempli avec le détail — sinon on garde le
     // message générique par défaut déjà présent dans le bouton.
-    if (nom && lieu && qte && prix) {
+    // Le prix n'est volontairement pas affiché ici : le montant final dépend
+    // de la zone de livraison (+1 500 FCFA pour Songon, Anyama, Bassam, Ebimpé
+    // et les zones hors Abidjan), donc c'est l'équipe qui le confirme sur WhatsApp.
+    if (nom && lieu && qte) {
       document.getElementById('recapBox').style.display = 'block';
       document.getElementById('recapLieu').textContent = lieu;
       document.getElementById('recapQte').textContent = qte + (qte > 1 ? ' cures' : ' cure');
-      document.getElementById('recapPrix').textContent = Number(prix).toLocaleString('fr-FR') + ' FCFA';
 
       var message =
         "Bonjour, je viens de passer commande sur le site ALVÉO 🌿\n" +
@@ -231,7 +232,6 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
         (tel ? "Téléphone : " + tel + "\n" : "") +
         "Lieu de livraison : " + lieu + "\n" +
         "Quantité : " + qte + "\n" +
-        "Total : " + Number(prix).toLocaleString('fr-FR') + " FCFA\n" +
         "Je souhaite valider ma commande et recevoir la posologie.";
 
       document.getElementById('waLink').href =
