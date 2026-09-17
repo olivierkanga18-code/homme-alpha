@@ -6,13 +6,10 @@
 <title>Dernière étape — ALVÉO Intime</title>
 
 <!-- ============================================================
-     META PIXEL — désactivé pour l'instant (pas de Pixel ALVÉO fourni).
+     META PIXEL — ALVÉO Intime (Pixel ID : 1040371682290772)
      Cette page n'est atteinte QUE si le formulaire a bien été soumis,
      donc l'événement Lead ici reflète une vraie commande, pas un simple clic.
-     Pour l'activer : décommenter le bloc ci-dessous et remplacer
-     'TON_PIXEL_ID' par l'ID réel du Pixel ALVÉO.
      ============================================================ -->
-<!--
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -22,14 +19,19 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'TON_PIXEL_ID');
+fbq('init', '1040371682290772');
 fbq('track', 'PageView');
-fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
+
+// event_id transmis par index.html : même identifiant que celui envoyé
+// au CAPI par Code.gs, pour que Meta fusionne les deux signaux en un
+// seul événement au lieu de compter le lead deux fois.
+var alveoCapiParams = new URLSearchParams(window.location.search);
+var alveoEventId = alveoCapiParams.get('event_id') || '';
+fbq('track', 'Lead', {value: 7500, currency: 'XOF'}, alveoEventId ? {eventID: alveoEventId} : {});
 </script>
 <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=TON_PIXEL_ID&ev=Lead&noscript=1"
+  src="https://www.facebook.com/tr?id=1040371682290772&ev=Lead&noscript=1"
 /></noscript>
--->
 <!-- ============================================================
      FIN META PIXEL
      ============================================================ -->
@@ -102,10 +104,19 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
     margin-bottom:1.3rem;
   }
   .greet{
-    font-size:1rem;
+    font-size:1.05rem;
     font-weight:700;
-    color:var(--copper);
+    color:var(--navy);
     margin:0 0 1.1rem;
+  }
+  .greet .prenom{
+    background:var(--copper-30);
+    color:var(--copper);
+    font-weight:800;
+    padding:0.04em 0.34em;
+    border-radius:6px;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
   }
   .highlight{
     background:var(--copper-30);
@@ -139,6 +150,17 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
   .recap-row{display:flex;justify-content:space-between;gap:10px;font-size:0.85rem;padding:5px 0;}
   .recap-row span:first-child{color:var(--slate);}
   .recap-row b{font-family:'Fraunces',serif;color:var(--copper);font-weight:600;white-space:nowrap;}
+  .delivery-note{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    color:var(--copper);
+    font-weight:600;
+    font-size:0.9rem;
+    margin:0 0 1.6rem;
+  }
+  .delivery-note svg{width:18px;height:18px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;}
   .actions{
     display:flex;
     justify-content:center;
@@ -185,15 +207,20 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
     <div class="brandline">ALVÉO Intime</div>
     <p class="greet" id="greetLine">Bravo, on a bien reçu ta commande</p>
     <h1><span class="highlight">Dernière étape</span> pour valider ta cure</h1>
-    <p>Écris-nous sur WhatsApp pour valider ta commande et recevoir ta posologie.</p>
+    <p>Écris-nous sur WhatsApp pour confirmer ta commande et recevoir ta posologie.</p>
 
     <div class="recap" id="recapBox" style="display:none;">
       <div class="recap-row"><span>Lieu de livraison</span><b id="recapLieu">—</b></div>
       <div class="recap-row"><span>Quantité</span><b id="recapQte">—</b></div>
     </div>
 
+    <div class="delivery-note">
+      <svg viewBox="0 0 24 24"><path d="M3 10h11v8H3zM14 13h4l3 3v2h-7z"/><circle cx="7" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg>
+      <span>Livraison prévue sous 24h</span>
+    </div>
+
     <div class="actions">
-      <a href="https://wa.me/2250769568958?text=Bonjour%2C%20je%20viens%20de%20passer%20commande%20sur%20le%20site%20ALV%C3%89O%2C%20je%20souhaite%20valider%20ma%20cure." target="_blank" rel="noopener" class="btn btn-whatsapp" id="waLink">
+      <a href="https://wa.me/2250769568958?text=Bonjour%2C%20je%20viens%20de%20passer%20commande%20sur%20le%20site%20ALV%C3%89O%2C%20je%20souhaite%20confirmer%20ma%20cure." target="_blank" rel="noopener" class="btn btn-whatsapp" id="waLink">
         <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.94 9.94 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18.2c-1.63 0-3.15-.45-4.45-1.24l-.32-.19-3.11.82.83-3.03-.21-.31A8.17 8.17 0 0 1 3.84 12c0-4.53 3.68-8.2 8.2-8.2 4.53 0 8.2 3.68 8.2 8.2s-3.67 8.2-8.2 8.2zm4.51-6.13c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01a.93.93 0 0 0-.67.31c-.23.24-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
         Continuer sur WhatsApp
       </a>
@@ -211,8 +238,15 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
     var prix = params.get('prix') || '';
     var prenom = nom.split(' ')[0] || '';
 
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
     if (prenom) {
-      document.getElementById('greetLine').textContent = 'Bravo ' + prenom + ', on a bien reçu ta commande';
+      document.getElementById('greetLine').innerHTML =
+        'Bravo <span class="prenom">' + escapeHtml(prenom) + '</span>, on a bien reçu ta commande';
     }
 
     // Si on a les infos de la commande, on affiche le récap et on construit
@@ -232,7 +266,7 @@ fbq('track', 'Lead', {value: 7500, currency: 'XOF'});
         (tel ? "Téléphone : " + tel + "\n" : "") +
         "Lieu de livraison : " + lieu + "\n" +
         "Quantité : " + qte + "\n" +
-        "Je souhaite valider ma commande et recevoir la posologie.";
+        "Je souhaite confirmer ma commande et recevoir la posologie.";
 
       document.getElementById('waLink').href =
         "https://wa.me/2250769568958?text=" + encodeURIComponent(message);
