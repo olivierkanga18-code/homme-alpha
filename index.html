@@ -214,6 +214,7 @@
   }
   .delivery-badge svg{width:17px;height:17px;stroke:var(--copper);fill:none;stroke-width:1.8;flex:none;margin-top:1px;}
   .delivery-badge .db-main{font-size:14px;font-weight:700;color:var(--copper);}
+  .db-pill{display:inline-block;background:var(--copper);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:0.02em;padding:2px 8px;border-radius:100px;margin-left:7px;vertical-align:middle;white-space:nowrap;}
   .delivery-badge .db-sub{font-size:11.5px;color:#9AA5B3;margin-top:3px;line-height:1.5;}
   .guarantee-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:12px;}
   .guarantee-row span{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--slate);font-weight:600;}
@@ -432,7 +433,7 @@
   <div class="wrap">
     <div class="trust-grid">
       <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3z"/></svg></div><span>100% naturel</span></div>
-      <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10h18M3 6h18v14H3z"/></svg></div><span>Paiement livraison</span></div>
+      <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><span>Livraison sous 24h</span></div>
       <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0l-9 6-9-6m18 0l-9-5-9 5"/></svg></div><span>Colis discret</span></div>
       <div class="trust-cell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M11 3a4 4 0 110 8 4 4 0 010-8z"/></svg></div><span>500+ clients</span></div>
     </div>
@@ -456,7 +457,7 @@
     <div class="review-card">
       <div class="review-head">
         <div class="avatar">Y.</div>
-        <div><div class="r-name">Yao B.</div><div class="r-loc">Daloa</div></div>
+        <div><div class="r-name">Yao B.</div><div class="r-loc">Cocody, Abidjan</div></div>
         <div class="r-stars">
           <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
           <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
@@ -486,7 +487,7 @@
     <div class="review-card">
       <div class="review-head">
         <div class="avatar">P.</div>
-        <div><div class="r-name">Patrice N.</div><div class="r-loc">Yamoussoukro</div></div>
+        <div><div class="r-name">Patrice N.</div><div class="r-loc">Yopougon, Abidjan</div></div>
         <div class="r-stars">
           <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
           <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
@@ -516,7 +517,7 @@
     <div class="review-card">
       <div class="review-head">
         <div class="avatar">É.</div>
-        <div><div class="r-name">Étienne K.</div><div class="r-loc">Bouaké</div></div>
+        <div><div class="r-name">Étienne K.</div><div class="r-loc">Marcory, Abidjan</div></div>
         <div class="r-stars">
           <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
           <svg viewBox="0 0 20 20"><polygon points="10,1 13,7 19,7 14,11 16,18 10,14 4,18 6,11 1,7 7,7"/></svg>
@@ -543,7 +544,7 @@
         <img src="produit-sachet.jpg" width="48" height="48" loading="lazy" alt="ALVÉO Intime, 100g">
         <div>
           <div class="pname">ALVÉO Intime</div>
-          <div class="psub">À base de 4 plantes ancestrales</div>
+          <div class="psub">Cure de 100g · À base de 4 plantes ancestrales</div>
         </div>
         <div class="pval">7 500 F</div>
       </div>
@@ -551,7 +552,7 @@
       <div class="delivery-badge">
         <svg viewBox="0 0 24 24"><path d="M3 10h11v8H3zM14 13h4l3 3v2h-7z"/><circle cx="7" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg>
         <div>
-          <div class="db-main">Livraison gratuite partout à Abidjan</div>
+          <div class="db-main">Livraison gratuite à Abidjan<span class="db-pill">Sous 24h</span></div>
           <div class="db-sub">Sauf Songon, Anyama, Bassam et Ebimpé : prévois 1 500 FCFA de livraison supplémentaire.</div>
         </div>
       </div>
@@ -589,7 +590,7 @@
         <span class="val" id="totalVal">7 500 FCFA</span>
       </div>
 
-      <button type="submit" class="submit-btn" id="submitBtn">Je commande ma cure maintenant — Paiement à la livraison</button>
+      <button type="submit" class="submit-btn" id="submitBtn">✅ Je commande ma cure maintenant — Paiement à la livraison</button>
       <p class="mini-review"><span class="mini-review-tag">★ Avis client</span>« Ça fait grave bander 👍🏽 en plus pas de migraine, de façon naturelle même. Merci la team, on est ensemble. »</p>
 
       <div class="guarantee-row">
@@ -603,12 +604,12 @@
 
 <footer>
   <p>ALVÉO Intime est un complément alimentaire pour adulte. Garde-le hors de portée des enfants.</p>
-  <p class="footnote-small">*Effet variable selon les personnes.</p>
+  <p class="footnote-small">*Comme pour tout produit 100% naturel, les résultats peuvent varier légèrement d'une personne à l'autre.</p>
   <div class="signature-brand">Un produit NOVEA GROUP</div>
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <div class="info"><b>Paiement à la livraison</b><span>Livraison gratuite à Abidjan</span></div>
+  <div class="info"><b>Paiement à la livraison</b><span>Livraison gratuite sous 24h</span></div>
   <a href="#commande">Je commande</a>
 </div>
 
@@ -679,10 +680,19 @@
       day: '2-digit', month: '2-digit', year: 'numeric',
       hour: '2-digit', minute: '2-digit'
     });
+
+    // Identifiant unique pour dédupliquer le Pixel navigateur (merci.html)
+    // et l'événement Lead envoyé côté serveur par Code.gs — Meta fusionne
+    // les deux automatiquement grâce à cet identifiant partagé.
+    const eventId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+
     const payload = {
       date: dateStr, nom, lieu, telephone: tel, qte: qty, prix: prixTotal,
       angle: tracking.angle, source: tracking.source, campagne: tracking.campagne,
-      adset: tracking.adset, creatif: tracking.creatif, statut: "Nouveau"
+      adset: tracking.adset, creatif: tracking.creatif, statut: "Nouveau",
+      event_id: eventId
     };
 
     try {
@@ -693,7 +703,7 @@
       });
     } catch(err) {}
 
-    const redirectParams = new URLSearchParams({ nom, tel, lieu, qte: qty, prix: prixTotal });
+    const redirectParams = new URLSearchParams({ nom, tel, lieu, qte: qty, prix: prixTotal, event_id: eventId });
     setTimeout(() => { window.location.href = "merci.html?" + redirectParams.toString(); }, 400);
   });
 </script>
