@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Votre cure ALVÉO — Guide officiel</title>
+<meta name="description" content="Tout ce qu'il faut savoir pour bien suivre votre cure ALVÉO Intime.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<style>
+  :root{
+    --navy:#0D1B2A; --navy-deep:#08121C; --copper:#B87333; --copper-light:#D9A066;
+    --cream:#F4F1EA; --slate:#34495E; --white:#FFFFFF; --max:520px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-snap-type:y proximity;}
+  body{
+    font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy);
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; color:var(--navy); text-wrap:balance;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 26px; width:100%;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+
+  /* ===== POINTS DE NAVIGATION (droite, fixes) ===== */
+  .dotnav{
+    position:fixed; right:14px; top:50%; transform:translateY(-50%); z-index:20;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .dotnav a{
+    width:6px; height:6px; border-radius:50%; background:rgba(184,115,51,0.35);
+    display:block; text-decoration:none;
+  }
+  .dotnav a:hover, .dotnav a:focus{background:var(--copper);}
+
+  /* ===== DIAPOSITIVES PLEIN ÉCRAN ===== */
+  .slide{
+    min-height:100vh; min-height:100svh; scroll-snap-align:start;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:60px 26px; position:relative;
+  }
+  .slide.dark{background:var(--navy); color:var(--cream);}
+  .slide.light{background:var(--cream);}
+  .slide .num-label{
+    font-family:'Fraunces',serif; font-size:12px; font-weight:600; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--copper-light); margin-bottom:16px;
+  }
+  .slide.light .num-label{color:var(--copper);}
+  .date-badge{
+    display:inline-block; font-family:'Inter',sans-serif; font-size:13px; font-weight:800;
+    letter-spacing:0.03em; text-transform:uppercase; padding:8px 18px; border-radius:100px;
+    margin-bottom:10px;
+  }
+  .slide.light .date-badge{background:var(--navy); color:var(--cream);}
+  .slide.dark .date-badge{background:var(--copper); color:var(--navy-deep);}
+  .date-caption{display:block; font-size:12.5px; font-weight:500; margin-bottom:18px; opacity:0.7;}
+  .slide.light .date-caption{color:var(--slate);}
+  .slide.dark .date-caption{color:var(--cream);}
+  .slide h1{font-size:clamp(24px,7.5vw,30px); font-weight:500; color:var(--cream); line-height:1.32; margin-bottom:14px; max-width:300px;}
+  .slide.dark p.lead{color:rgba(244,241,234,0.68); font-size:14.5px; max-width:280px;}
+  .slide.light h2{font-size:24px; font-weight:600; margin-bottom:14px;}
+  .slide.light p.lead{color:var(--slate); font-size:14.5px; max-width:280px; margin-bottom:28px;}
+
+  .logo-mark{font-family:'Fraunces',serif; font-weight:600; font-size:14px; letter-spacing:0.2em; text-transform:uppercase; color:var(--copper-light); margin-bottom:20px;}
+
+  /* Slide dosage */
+  .big-amount{font-family:'Fraunces',serif; font-size:44px; font-weight:700; color:var(--copper-light); margin-bottom:6px;}
+  .mix-row{display:flex; gap:10px; margin-top:24px;}
+  .mix-pill{
+    background:rgba(244,241,234,0.08); border:1px solid rgba(217,160,102,0.3); border-radius:14px;
+    padding:14px 10px; flex:1; text-align:center;
+  }
+  .mix-pill svg{width:22px; height:22px; stroke:var(--copper-light); fill:none; stroke-width:1.6; margin-bottom:8px;}
+  .mix-pill .mix-qty{display:block; font-size:13px; font-weight:800; color:var(--copper-light); letter-spacing:0.01em; margin-bottom:3px;}
+  .mix-pill .mix-detail{display:block; font-size:10.5px; font-weight:500; color:rgba(244,241,234,0.75); line-height:1.35;}
+
+  /* Slide cure (phase) */
+  .phase-num{font-family:'Fraunces',serif; font-size:88px; font-weight:700; color:var(--copper); opacity:0.9; line-height:1; margin-bottom:6px;}
+  .phase-detail{font-size:17px; font-weight:600; color:var(--navy); margin-top:16px;}
+  .phase-detail b{color:var(--copper);}
+
+  /* Slide formule */
+  .plant-mini-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%; margin-top:6px;}
+  .plant-mini{text-align:left; background:var(--white); border:1px solid rgba(13,27,42,0.08); border-radius:14px; padding:16px;}
+  .plant-mini h3{font-size:14.5px; font-weight:700; color:var(--copper); margin-bottom:5px;}
+  .plant-mini p{font-size:12px; color:var(--slate); line-height:1.5;}
+
+  .scroll-hint{position:absolute; bottom:26px; left:50%; transform:translateX(-50%); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:0.5;}
+  .slide.dark .scroll-hint{color:var(--cream);}
+  .slide.light .scroll-hint{color:var(--slate);}
+
+  /* ===== BLOC DE RÉFÉRENCE (scroll classique, pas en plein écran) ===== */
+  .reference{background:var(--white); padding:50px 0;}
+  .ref-section{padding:0 0 40px;}
+  .ref-section:last-child{padding-bottom:0;}
+  .ref-eyebrow{display:block; font-size:12px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper); margin-bottom:10px;}
+  .ref-section h2{font-size:20px; font-weight:600; margin-bottom:18px;}
+
+  .tip-item{display:flex; gap:12px; margin-bottom:16px;}
+  .tip-item:last-child{margin-bottom:0;}
+  .tip-item svg{flex:none; width:19px; height:19px; stroke:var(--copper); fill:none; stroke-width:1.8; margin-top:2px;}
+  .tip-item p{font-size:14px; color:var(--slate);}
+  .tip-item b{color:var(--navy);}
+
+  .precaution-box{background:var(--cream); border-radius:14px; padding:18px; font-size:13px; color:var(--slate); margin-bottom:12px;}
+  .precaution-box:last-child{margin-bottom:0;}
+  .precaution-box p{margin-bottom:10px;}
+  .precaution-box p:last-child{margin-bottom:0;}
+  .precaution-highlight{background:transparent; border:1.4px solid var(--copper); position:relative;}
+  .precaution-highlight b{color:var(--copper);}
+
+  .faq-item{border-bottom:1px solid rgba(13,27,42,0.1); padding:15px 0;}
+  .faq-item:first-child{padding-top:0;}
+  .faq-q{width:100%; text-align:left; background:none; border:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; font-family:'Inter',sans-serif; font-size:14.5px; font-weight:700; color:var(--navy);}
+  .faq-q svg{flex:none; width:16px; height:16px; stroke:var(--copper); fill:none; stroke-width:2; transition:transform 0.25s ease;}
+  .faq-item[open] .faq-q svg{transform:rotate(45deg);}
+  .faq-a{padding-top:9px; font-size:13.5px; color:var(--slate); line-height:1.6;}
+
+  .help-card{background:var(--navy); border-radius:18px; padding:28px 22px; text-align:center;}
+  .help-card h2{color:var(--cream); font-size:19px; margin-bottom:8px;}
+  .help-card p{color:rgba(244,241,234,0.72); font-size:13.5px; margin-bottom:20px;}
+  .whatsapp-btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; width:100%; background:var(--copper); color:var(--navy-deep); border-radius:14px; padding:14px 20px; text-decoration:none; font-weight:800; font-size:14.5px;}
+  .whatsapp-btn svg{width:18px; height:18px; fill:currentColor;}
+
+  footer{padding:32px 24px 40px; text-align:center;}
+  footer .brand{font-family:'Fraunces',serif; font-weight:700; font-size:14px; margin-bottom:2px;}
+  footer .company{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper); margin-bottom:12px;}
+  footer .legal{font-size:11px; color:var(--slate); opacity:0.7; max-width:300px; margin:0 auto;}
+
+  @media (min-width:760px){
+    :root{--max:600px;}
+    .slide h1{font-size:36px; max-width:420px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="dotnav" aria-label="Navigation rapide">
+  <a href="#s-hero" aria-label="Accueil"></a>
+  <a href="#s-prise" aria-label="Comment prendre ALVÉO"></a>
+  <a href="#s-cure1" aria-label="Jours 1 à 5"></a>
+  <a href="#s-cure2" aria-label="Dès le jour 6"></a>
+  <a href="#s-apres" aria-label="Après la cure"></a>
+  <a href="#s-formule" aria-label="La formule"></a>
+</nav>
+
+<main>
+
+  <section class="slide dark" id="s-hero">
+    <span class="logo-mark">ALVÉO</span>
+    <h1>Bienvenue dans votre cure ALVÉO</h1>
+    <p class="lead">Retrouvez ici tout ce qu'il faut savoir pour bien suivre votre cure.</p>
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper-light); opacity:0.85; margin-top:18px;">Posologie · Mode d'utilisation · Conseils</p>
+    <span class="scroll-hint">Faites glisser ↓</span>
+  </section>
+
+  <section class="slide dark" id="s-prise">
+    <span class="num-label">Le geste</span>
+    <div class="big-amount">1 cuillère à café d'ALVÉO</div>
+    <p class="lead">à mélanger dans une seule solution de votre choix :</p>
+    <div class="mix-row">
+      <div class="mix-pill">
+        <svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 01-8 9 8 8 0 01-8-9z"/><path d="M8 11V6a4 4 0 014-4"/></svg>
+        <span class="mix-qty">Demi-pot</span>
+        <span class="mix-detail">de yaourt nature ou sans sucre</span>
+      </div>
+      <div class="mix-pill">
+        <svg viewBox="0 0 24 24"><path d="M7 3h10l-1 17a2 2 0 01-2 2h-4a2 2 0 01-2-2z"/><path d="M7.5 11h9"/></svg>
+        <span class="mix-qty">Demi-verre</span>
+        <span class="mix-detail">d'eau tiède</span>
+      </div>
+      <div class="mix-pill">
+        <svg viewBox="0 0 24 24"><path d="M8 2h8l1 4H7z"/><path d="M7 6h10l1 14a2 2 0 01-2 2H8a2 2 0 01-2-2z"/></svg>
+        <span class="mix-qty">Demi-verre</span>
+        <span class="mix-detail">de lait</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide light" id="s-cure1">
+    <span class="date-badge">Jour 1 à jour 5</span>
+    <span class="date-caption">(les 5 premiers jours)</span>
+    <div class="phase-num">01</div>
+    <h2>Début de la cure</h2>
+    <div class="phase-detail"><b>2 prises</b> par jour — matin et soir, après le repas.</div>
+  </section>
+
+  <section class="slide dark" id="s-cure2">
+    <span class="date-badge" style="margin-bottom:20px;">À partir du jour 6</span>
+    <div class="phase-num" style="color:var(--copper-light);">02</div>
+    <h1 style="font-size:22px; max-width:280px;">Phase d'entretien</h1>
+    <p class="lead"><b style="color:var(--copper-light);">1 prise par jour</b>, le matin après le petit-déjeuner, jusqu'à la fin de votre cure.</p>
+  </section>
+
+  <section class="slide light" id="s-apres">
+    <span class="num-label">Et après ?</span>
+    <h2>Une fois votre cure terminée</h2>
+    <p class="lead" style="margin-bottom:6px;">Pas besoin d'en reprendre à chaque rapport.</p>
+    <p style="font-size:12.5px; color:var(--slate); max-width:260px; margin-bottom:10px;">Les effets peuvent continuer d'être ressentis plusieurs mois après la fin de la cure.</p>
+    <p style="font-size:13.5px; color:var(--navy); font-weight:600; max-width:260px; margin-bottom:14px;">Bander et tenir son érection sans effort, de façon naturelle.</p>
+    <span style="font-size:11px; color:var(--slate); opacity:0.75; max-width:260px;">*Comme pour tout produit 100% naturel, les résultats peuvent varier légèrement d'une personne à l'autre.</span>
+  </section>
+
+  <section class="slide light" id="s-formule">
+    <span class="num-label">La formule</span>
+    <h2>4 plantes, une tradition</h2>
+    <p class="lead" style="margin-bottom:8px;">Héritée de savoirs traditionnels transmis depuis des générations.</p>
+    <div class="plant-mini-grid">
+      <div class="plant-mini"><h3>Maca</h3><p>Racine des hauts plateaux andins, tradition péruvienne.</p></div>
+      <div class="plant-mini"><h3>Ginseng</h3><p>Racine emblématique de la tradition asiatique.</p></div>
+      <div class="plant-mini"><h3>Gingembre</h3><p>Rhizome utilisé depuis l'Antiquité dans le monde entier.</p></div>
+      <div class="plant-mini"><h3>Tribulus</h3><p>Plante des médecines ancestrales traditionnelles.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== BLOC DE RÉFÉRENCE — scroll classique, pas de diapositives (contenu à consulter, pas à "feuilleter") ===== -->
+  <div class="reference">
+    <div class="wrap">
+
+      <div class="ref-section" id="conseils">
+        <span class="ref-eyebrow">Bonnes pratiques</span>
+        <h2>Conseils pour bien suivre votre cure</h2>
+        <div class="tip-item">
+          <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+          <p><b>Régularité :</b> essayez de prendre ALVÉO à heures fixes, ça aide à en faire un réflexe simple au quotidien.</p>
+        </div>
+        <div class="tip-item">
+          <svg viewBox="0 0 24 24"><path d="M9 3h6l1 4H8z"/><path d="M7 7h10l-1 13a2 2 0 01-2 2H10a2 2 0 01-2-2z"/></svg>
+          <p><b>Quantité :</b> une cuillère à café par prise, pas plus, pour respecter le dosage prévu.</p>
+        </div>
+        <div class="tip-item">
+          <svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v3a5 5 0 01-5 5 5 5 0 01-5-5z"/><path d="M7 5H5a2 2 0 000 4h1M17 5h2a2 2 0 010 4h-1"/></svg>
+          <p><b>Alcool :</b> évitez-en pendant les 5 premiers jours, pour un effet encore plus rapide.</p>
+        </div>
+        <div class="tip-item">
+          <svg viewBox="0 0 24 24"><path d="M4 15a7 7 0 007-11 7 7 0 105 12 7 7 0 01-12-1z"/></svg>
+          <p><b>Repos :</b> favorisez un bon sommeil, ça aide à détendre les nerfs pendant la cure.</p>
+        </div>
+        <!-- ===== EN ATTENTE — NE PAS PUBLIER SANS VALIDATION =====
+             Conservation du produit + conduite en cas d'oubli d'une prise : non
+             confirmées, volontairement omises. Ajouter deux .tip-item ici une
+             fois l'info fournie.
+        ===== -->
+      </div>
+
+      <div class="ref-section" id="precautions">
+        <span class="ref-eyebrow">Précautions</span>
+        <h2>À savoir</h2>
+        <div class="precaution-box">
+          <p>ALVÉO Intime est un complément alimentaire pour adulte. À conserver hors de portée des enfants.</p>
+        </div>
+        <div class="precaution-box precaution-highlight">
+          <p>Nos clients souffrant de <b>diabète</b> ou de <b>crise de tension</b> le consomment très bien et sans problème. Si toutefois vous êtes dans un cas plus spécifique, nous vous recommandons de demander l'avis d'un professionnel de santé.</p>
+        </div>
+      </div>
+
+      <div class="ref-section" id="faq">
+        <span class="ref-eyebrow">Questions fréquentes</span>
+        <h2>FAQ</h2>
+
+        <details class="faq-item">
+          <summary class="faq-q">Quand dois-je prendre ALVÉO ?
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="faq-a">Deux fois par jour (matin et soir) durant les 5 premiers jours, puis une fois par jour le matin, à partir du 6ᵉ jour et jusqu'à la fin de votre cure.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Avec quoi puis-je mélanger ALVÉO ?
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="faq-a">Dans un demi-pot de yaourt, un demi-verre d'eau tiède, ou un demi-verre de lait — selon votre préférence.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Dois-je prendre ALVÉO avant chaque rapport ?
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="faq-a">Non. ALVÉO se prend selon le rythme régulier de la cure (voir plus haut), pas ponctuellement avant un rapport.</p>
+        </details>
+
+        <!-- ===== EN ATTENTE — NE PAS PUBLIER SANS VALIDATION =====
+             "Que faire si j'oublie une prise ?", "Comment conserver ALVÉO ?",
+             "Puis-je refaire une cure ?" — réponses non confirmées.
+        ===== -->
+      </div>
+
+      <div class="ref-section" id="aide" style="padding-bottom:0;">
+        <div class="help-card">
+          <h2>Une question sur votre cure ?</h2>
+          <p>Notre équipe est disponible pour vous accompagner.</p>
+          <a class="whatsapp-btn" href="https://wa.me/2250769568958?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20ma%20cure%20ALV%C3%89O." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.07-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.64 0-3.16-.46-4.45-1.26l-.32-.19-3.02.79.8-2.94-.21-.31A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+            Parler à l'équipe ALVÉO
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="brand">ALVÉO</div>
+  <div class="company">Novea Group</div>
+  <p class="legal">ALVÉO Intime est un complément alimentaire pour adulte. À conserver hors de portée des enfants.</p>
+</footer>
+
+</body>
+</html>
