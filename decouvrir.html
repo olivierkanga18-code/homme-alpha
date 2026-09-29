@@ -17,7 +17,7 @@
     --cream:#F4F1EA; --slate:#34495E; --white:#FFFFFF; --max:520px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-snap-type:y proximity;}
+  html{scroll-behavior:smooth;}
   body{
     font-family:'Inter',sans-serif; background:var(--cream); color:var(--navy);
     line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
@@ -40,7 +40,7 @@
 
   /* ===== DIAPOSITIVES PLEIN ÉCRAN ===== */
   .slide{
-    min-height:100vh; min-height:100svh; scroll-snap-align:start;
+    min-height:100vh; min-height:100svh;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
     text-align:center; padding:60px 26px; position:relative;
   }
@@ -81,6 +81,17 @@
 
   /* Slide cure (phase) */
   .phase-num{font-family:'Fraunces',serif; font-size:88px; font-weight:700; color:var(--copper); opacity:0.9; line-height:1; margin-bottom:6px;}
+  .rhythm-row{display:flex; gap:22px; margin-bottom:14px;}
+  .rhythm-item{display:flex; flex-direction:column; align-items:center; gap:8px;}
+  .rhythm-item svg{width:40px; height:40px; stroke-width:1.5; fill:none;}
+  .rhythm-item span{font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;}
+  .slide.light .rhythm-item svg{stroke:var(--copper);}
+  .slide.light .rhythm-item span{color:var(--navy);}
+  .slide.dark .rhythm-item svg{stroke:var(--copper-light);}
+  .slide.dark .rhythm-item span{color:var(--cream);}
+  .clarify-text{font-size:12.5px; margin-top:14px; max-width:270px; line-height:1.55;}
+  .slide.light .clarify-text{color:var(--slate);}
+  .slide.dark .clarify-text{color:rgba(244,241,234,0.6);}
   .phase-detail{font-size:17px; font-weight:600; color:var(--navy); margin-top:16px;}
   .phase-detail b{color:var(--copper);}
 
@@ -185,16 +196,32 @@
   <section class="slide light" id="s-cure1">
     <span class="date-badge">Jour 1 à jour 5</span>
     <span class="date-caption">(les 5 premiers jours)</span>
-    <div class="phase-num">01</div>
+    <div class="rhythm-row">
+      <div class="rhythm-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
+        <span>Matin</span>
+      </div>
+      <div class="rhythm-item">
+        <svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 119.5 4a6.5 6.5 0 1010.5 10.5z"/></svg>
+        <span>Soir</span>
+      </div>
+    </div>
     <h2>Début de la cure</h2>
     <div class="phase-detail"><b>2 prises</b> par jour — matin et soir, après le repas.</div>
+    <p class="clarify-text">Mélangez ALVÉO dans la solution de votre choix (yaourt, lait ou eau tiède, comme indiqué), et prenez-le matin et soir pendant les 5 premiers jours.</p>
   </section>
 
   <section class="slide dark" id="s-cure2">
     <span class="date-badge" style="margin-bottom:20px;">À partir du jour 6</span>
-    <div class="phase-num" style="color:var(--copper-light);">02</div>
+    <div class="rhythm-row">
+      <div class="rhythm-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
+        <span>Matin</span>
+      </div>
+    </div>
     <h1 style="font-size:22px; max-width:280px;">Phase d'entretien</h1>
     <p class="lead"><b style="color:var(--copper-light);">1 prise par jour</b>, le matin après le petit-déjeuner, jusqu'à la fin de votre cure.</p>
+    <p class="clarify-text">Mélangez ALVÉO dans la solution de votre choix, et prenez-le le matin, à partir du 6ᵉ jour et jusqu'à la fin de votre cure.</p>
   </section>
 
   <section class="slide light" id="s-apres">
