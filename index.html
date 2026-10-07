@@ -174,7 +174,11 @@
   .product-line img{width:48px;height:48px;object-fit:cover;border-radius:10px;}
   .product-line .pname{font-family:'Fraunces',serif;font-size:16.5px;color:var(--navy);}
   .product-line .psub{font-size:13px;color:var(--slate);}
-  .product-line .pval{margin-left:auto;font-family:'Fraunces',serif;font-size:18px;color:var(--copper);}
+  .product-line .pval{margin-left:auto;font-family:'Fraunces',serif;font-size:18px;color:var(--copper);text-align:right;line-height:1.15;}
+  .pval .old{display:block;font-family:'Inter',sans-serif;font-size:13px;color:#8A95A3;text-decoration:line-through;font-weight:500;}
+  .pval .new{display:block;}
+  .promo-tag{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:var(--cream);font-size:13px;font-weight:700;padding:8px 12px;border-radius:999px;margin:0 0 14px;}
+  .promo-tag b{background:var(--copper);color:var(--navy-deep);padding:2px 9px;border-radius:999px;font-weight:800;}
 
   .qty-row{display:flex;align-items:center;justify-content:space-between;background:var(--cream);border-radius:12px;padding:10px 10px 10px 15px;margin-bottom:16px;}
   .qty-row span.lbl{font-size:15px;font-weight:600;color:var(--navy);}
@@ -540,13 +544,14 @@
     </div>
 
     <form id="orderForm" class="form-card" novalidate>
+      <div class="promo-tag" id="promoTag" style="display:none;"><span>Promo en cours</span><b id="promoPct">-20 %</b></div>
       <div class="product-line">
         <img src="produit-sachet.jpg" width="48" height="48" loading="lazy" alt="ALVÉO Intime, 100g">
         <div>
           <div class="pname">ALVÉO Intime</div>
           <div class="psub">Cure de 100g · À base de 4 plantes ancestrales</div>
         </div>
-        <div class="pval">7 500 F</div>
+        <div class="pval" id="pval">7 500 F</div>
       </div>
 
       <div class="delivery-badge">
@@ -609,13 +614,35 @@
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <div class="info"><b>Paiement à la livraison</b><span>Livraison gratuite sous 24h</span></div>
+  <div class="info" id="stickyInfo"><b>Paiement à la livraison</b><span>Livraison gratuite sous 24h</span></div>
   <a href="#commande">Je commande</a>
 </div>
 
 <script>
   const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmNRWiqp1fDxKo7JloWcNiBQW3XOV02xCeu1sSoT1vx7qyCkcT1wmdwSl7DqjjKzkoHQ/exec";
-  const PRIX_UNITAIRE = 7500;
+  // ===== PROMO — pour TERMINER la promo : passer PROMO_ACTIVE à false (prix normal rétabli partout) =====
+  const PROMO_ACTIVE = true;
+  const PRIX_NORMAL = 7500;
+  const PRIX_PROMO = 5990;
+  const PRIX_UNITAIRE = PROMO_ACTIVE ? PRIX_PROMO : PRIX_NORMAL;
+  const REMISE_PCT = Math.round((1 - PRIX_PROMO / PRIX_NORMAL) * 100);
+  function fmtF(n){ return n.toLocaleString('fr-FR') + " F"; }
+  function renderPromo(){
+    const pv = document.getElementById('pval');
+    const tag = document.getElementById('promoTag');
+    const si = document.getElementById('stickyInfo');
+    if(PROMO_ACTIVE){
+      pv.innerHTML = '<span class="old">' + fmtF(PRIX_NORMAL) + '</span><span class="new">' + fmtF(PRIX_PROMO) + '</span>';
+      document.getElementById('promoPct').textContent = '-' + REMISE_PCT + ' %';
+      tag.style.display = '';
+      si.innerHTML = '<b>-' + REMISE_PCT + ' % en ce moment 🔥</b><span>Paiement à la livraison · Livraison sous 24h</span>';
+    } else {
+      pv.textContent = fmtF(PRIX_NORMAL);
+      tag.style.display = 'none';
+      si.innerHTML = '<b>Paiement à la livraison</b><span>Livraison gratuite sous 24h</span>';
+    }
+  }
+  renderPromo();
 
   const params = new URLSearchParams(window.location.search);
   const tracking = {
