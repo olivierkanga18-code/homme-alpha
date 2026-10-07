@@ -214,6 +214,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     <div class="recap" id="recapBox" style="display:none;">
       <div class="recap-row"><span>Lieu de livraison</span><b id="recapLieu">—</b></div>
       <div class="recap-row"><span>Quantité</span><b id="recapQte">—</b></div>
+      <div class="recap-row" id="recapPrixRow" style="display:none;"><span id="recapPrixLbl">Prix de la cure</span><b id="recapPrix">—</b></div>
     </div>
 
     <div class="delivery-note">
@@ -254,13 +255,22 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     // Si on a les infos de la commande, on affiche le récap et on construit
     // un message WhatsApp pré-rempli avec le détail — sinon on garde le
     // message générique par défaut déjà présent dans le bouton.
-    // Le prix n'est volontairement pas affiché ici : le montant final dépend
-    // de la zone de livraison (+1 500 FCFA pour Songon, Anyama, Bassam, Ebimpé
-    // et les zones hors Abidjan), donc c'est l'équipe qui le confirme sur WhatsApp.
+    // On affiche uniquement le montant des cures (qte x prix unitaire), jamais un
+    // "total final" : les frais de livraison (+1 500 FCFA Songon, Anyama, Bassam,
+    // Ebimpé et hors Abidjan) restent confirmés par l'équipe sur WhatsApp.
     if (nom && lieu && qte) {
       document.getElementById('recapBox').style.display = 'block';
       document.getElementById('recapLieu').textContent = lieu;
       document.getElementById('recapQte').textContent = qte + (qte > 1 ? ' cures' : ' cure');
+
+      var prixNum = parseInt(prix, 10);
+      var prixTxt = '';
+      if (prixNum > 0) {
+        prixTxt = prixNum.toLocaleString('fr-FR') + ' FCFA';
+        document.getElementById('recapPrix').textContent = prixTxt;
+        if (qte > 1) { document.getElementById('recapPrixLbl').textContent = 'Prix des cures'; }
+        document.getElementById('recapPrixRow').style.display = 'flex';
+      }
 
       var message =
         "Bonjour, je viens de passer commande sur le site ALVÉO 🌿\n" +
@@ -268,6 +278,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
         (tel ? "Téléphone : " + tel + "\n" : "") +
         "Lieu de livraison : " + lieu + "\n" +
         "Quantité : " + qte + "\n" +
+        (prixTxt ? (qte > 1 ? "Prix des cures : " : "Prix de la cure : ") + prixTxt + "\n" : "") +
         "Je souhaite confirmer ma commande et recevoir la posologie.";
 
       document.getElementById('waLink').href =
