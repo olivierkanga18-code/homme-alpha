@@ -56,22 +56,22 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
   body{
     margin:0;
     min-height:100vh;
+    min-height:100svh;
     display:flex;
     align-items:flex-start;
     justify-content:center;
     background:var(--cream);
     color:var(--navy);
     font-family:'Inter', sans-serif;
-    padding:56px 24px 32px;
+    padding:24px 18px 24px;
     position:relative;
     overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
   }
   body::before{
     content:"";
-    position:absolute;
-    inset:-20% -10% auto -10%;
-    height:120%;
+    position:fixed;
+    inset:0;
     background:
       radial-gradient(45% 55% at 25% 15%, color-mix(in srgb, var(--copper) 26%, transparent) 0%, transparent 70%),
       radial-gradient(50% 55% at 80% 10%, color-mix(in srgb, var(--navy) 16%, transparent) 0%, transparent 70%);
@@ -85,31 +85,31 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     text-align:center;
     background:#fff;
     border-radius:24px;
-    padding:clamp(24px, 5vw, 44px) clamp(24px, 5vw, 40px);
+    padding:20px clamp(16px, 5vw, 40px) 22px;
     box-shadow:0 30px 70px -28px rgba(13,27,42,0.28);
   }
   .icon{
-    width:56px; height:56px;
-    margin:0 auto 1rem;
+    width:44px; height:44px;
+    margin:0 auto .6rem;
     border-radius:50%;
     background:var(--navy);
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 0 0 6px var(--copper-30), 0 16px 30px -14px rgba(13,27,42,0.45);
+    box-shadow:0 0 0 4px var(--copper-30), 0 12px 24px -12px rgba(13,27,42,0.45);
   }
-  .icon svg{width:24px; height:24px; color:var(--copper-light); stroke-width:2.2;}
+  .icon svg{width:20px; height:20px; color:var(--copper-light); stroke-width:2.2;}
   .brandline{
     font-family:'Fraunces', serif;
     font-style:italic;
     font-weight:500;
     font-size:0.95rem;
     color:var(--copper);
-    margin-bottom:.9rem;
+    margin-bottom:.5rem;
   }
   .greet{
     font-size:1.05rem;
     font-weight:700;
     color:var(--navy);
-    margin:0 0 .8rem;
+    margin:0 0 .5rem;
   }
   .greet .prenom{
     background:var(--copper-30);
@@ -132,33 +132,33 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     font-family:'Fraunces', serif;
     font-weight:600;
     color:var(--navy);
-    font-size:clamp(1.5rem, 4.4vw, 2rem);
-    margin:0 0 .85rem;
+    font-size:clamp(1.4rem, 4.4vw, 2rem);
+    margin:0 0 .5rem;
     line-height:1.25;
   }
   p{
     font-size:0.98rem;
     color:var(--slate);
-    margin:0 0 1.2rem;
+    margin:0 0 .8rem;
     line-height:1.55;
   }
   .recap{
     text-align:left;
     background:var(--cream);
     border-radius:14px;
-    padding:12px 16px;
-    margin:0 0 1.1rem;
+    padding:8px 16px;
+    margin:0 0 .9rem;
     box-shadow:0 18px 28px -16px rgba(184,115,51,0.55);
   }
-  .recap-row{display:flex;justify-content:space-between;gap:10px;font-size:0.85rem;padding:5px 0;}
+  .recap-row{display:flex;justify-content:space-between;gap:10px;font-size:0.85rem;padding:3px 0;}
   .recap-row span:first-child{color:var(--slate);}
   .recap-row b{font-family:'Fraunces',serif;color:var(--copper);font-weight:600;white-space:nowrap;}
   .recap-fees{
     text-align:center;
-    margin:0 0 1rem;
-    padding:0 4px;
+    margin:0 0 .6rem;
+    padding:0 2px;
   }
-  .recap-fees p{margin:0 0 5px;font-size:0.88rem;line-height:1.45;color:var(--slate);}
+  .recap-fees p{text-wrap:balance;margin:0 0 5px;font-size:0.85rem;line-height:1.45;color:var(--slate);}
   .recap-fees p:last-child{margin-bottom:0;}
   .recap-fees b{font-family:'Fraunces',serif;color:var(--copper);font-weight:600;white-space:nowrap;}
   .delivery-note{
@@ -169,7 +169,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     color:var(--copper);
     font-weight:600;
     font-size:0.9rem;
-    margin:0 0 .4rem;
+    margin:0 0 .1rem;
   }
   .delivery-note svg{width:18px;height:18px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;}
   .actions{
@@ -180,7 +180,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
   }
   .scroll-hint{
     display:flex;flex-direction:column;align-items:center;gap:2px;
-    margin:.8rem auto .9rem;
+    margin:.6rem auto .6rem;
     color:var(--copper);
     font-size:.82rem;font-weight:600;
     text-decoration:none;
@@ -199,7 +199,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     display:inline-flex;
     align-items:center;
     gap:.5em;
-    padding:.95em 1.1em;
+    padding:1.15em 1em;
     border-radius:999px;
     font-weight:700;
     text-decoration:none;
@@ -208,7 +208,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
   }
   .btn-whatsapp{
     white-space:nowrap;
-    font-size:.92rem;
+    font-size:.95rem;
     width:100%;
     max-width:440px;
     justify-content:center;
@@ -218,6 +218,7 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     box-shadow:0 0 0 4px color-mix(in srgb, var(--copper) 22%, transparent), 0 14px 30px -10px rgba(184,115,51,.75);
     animation:ctaPulse 2.6s ease-in-out infinite;
   }
+  .btn-whatsapp svg{flex-shrink:0;}
   .btn-whatsapp .arrow{font-size:1.15em;line-height:1;}
   @keyframes ctaPulse{
     0%,100%{box-shadow:0 0 0 4px color-mix(in srgb, var(--copper) 22%, transparent), 0 14px 30px -10px rgba(184,115,51,.75);}
@@ -236,20 +237,6 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     color:#9AA5B3;
   }
   footer span{color:var(--copper);}
-  @media (max-height: 720px){
-    body{ padding-top:20px; }
-    .card{ padding-top:20px; padding-bottom:20px; }
-    .icon{ width:44px; height:44px; margin-bottom:.6rem; box-shadow:0 0 0 4px var(--copper-30), 0 12px 24px -12px rgba(13,27,42,0.45); }
-    .icon svg{ width:20px; height:20px; }
-    .brandline{ margin-bottom:.5rem; font-size:.88rem; }
-    .greet{ margin-bottom:.5rem; }
-    h1{ font-size:1.4rem; margin-bottom:.5rem; }
-    p{ margin-bottom:.8rem; }
-    .recap{ padding-top:8px; }
-    .recap-row{ padding:3px 0; }
-    .delivery-note{ margin-bottom:.1rem; }
-    .scroll-hint{ margin-top:.5rem; margin-bottom:.6rem; }
-  }
   @media (max-width: 480px){
     body{ padding:32px 18px 24px; }
   }
@@ -272,8 +259,8 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
         <div class="recap-row" id="recapPrixRow" style="display:none;"><span id="recapPrixLbl">Prix de la cure</span><b id="recapPrix">—</b></div>
       </div>
       <div class="recap-fees">
-        <p>Livraison à Abidjan : <b>500&nbsp;ou&nbsp;1&nbsp;000&nbsp;F</b> selon ta zone, à régler à la livraison.</p>
-        <p>Expédition hors Abidjan : <b>1&nbsp;500&nbsp;ou&nbsp;2&nbsp;000&nbsp;F</b> selon ta ville.</p>
+        <p>Livraison à Abidjan : <b>500&nbsp;ou&nbsp;1&nbsp;000&nbsp;F</b> selon ta zone</p>
+        <p>Expédition : <b>1&nbsp;500&nbsp;ou&nbsp;2&nbsp;000&nbsp;F</b> selon ta ville</p>
       </div>
     </div>
 
