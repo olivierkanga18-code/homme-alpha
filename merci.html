@@ -152,6 +152,10 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
   .recap-row{display:flex;justify-content:space-between;gap:10px;font-size:0.85rem;padding:5px 0;}
   .recap-row span:first-child{color:var(--slate);}
   .recap-row b{font-family:'Fraunces',serif;color:var(--copper);font-weight:600;white-space:nowrap;}
+  .recap-fees{border-top:1px solid rgba(52,73,94,.15);margin-top:8px;padding-top:10px;font-size:0.85rem;line-height:1.5;color:var(--slate);}
+  .recap-fees p{margin:0 0 6px;}
+  .recap-fees p:last-child{margin-bottom:0;}
+  .recap-fees b{font-family:'Fraunces',serif;color:var(--copper);font-weight:600;}
   .delivery-note{
     display:flex;
     align-items:center;
@@ -215,6 +219,10 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
       <div class="recap-row"><span>Lieu de livraison</span><b id="recapLieu">—</b></div>
       <div class="recap-row"><span>Quantité</span><b id="recapQte">—</b></div>
       <div class="recap-row" id="recapPrixRow" style="display:none;"><span id="recapPrixLbl">Prix de la cure</span><b id="recapPrix">—</b></div>
+      <div class="recap-fees">
+        <p>Frais de livraison : <b>500 ou 1 000 F</b> selon ta zone, à régler à la livraison.</p>
+        <p>Expédition (hors Abidjan) : <b>1 500 ou 2 000 F</b> selon ta ville.</p>
+      </div>
     </div>
 
     <div class="delivery-note">
@@ -256,8 +264,8 @@ fbq('track', 'Lead', {value: alveoLeadValue, currency: 'XOF'},alveoEventId ? {ev
     // un message WhatsApp pré-rempli avec le détail — sinon on garde le
     // message générique par défaut déjà présent dans le bouton.
     // On affiche uniquement le montant des cures (qte x prix unitaire), jamais un
-    // "total final" : les frais de livraison (+1 500 FCFA Songon, Anyama, Bassam,
-    // Ebimpé et hors Abidjan) restent confirmés par l'équipe sur WhatsApp.
+    // "total final" : les frais de livraison (500/1 000 F Abidjan, 1 000 F Songon,
+    // Anyama, Bassam, Ebimpé) restent confirmés par l'équipe à l'appel.
     if (nom && lieu && qte) {
       document.getElementById('recapBox').style.display = 'block';
       document.getElementById('recapLieu').textContent = lieu;
